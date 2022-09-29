@@ -1,10 +1,8 @@
 class Aluno:
-    def __init__(self, codigo, nome, matricula):
-        self.codigo = codigo
-        self.nome = nome
-        self.matricula = matricula
+    def __init__(self, cod, name, registration):
+        self.cod = cod
+        self.name = name
+        self.registration = registration
 
     def imprimir(self):
-        print('Código: ', self.codigo)
-        print('Nome: ', self.nome)
-        print('Matrícula: ', self.matricula)
+        print(f"Código: {self.cod}\nNome: {self.name}\nMatrícula: {self.registration}")
