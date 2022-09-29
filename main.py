@@ -44,7 +44,18 @@ def compactar_tudo(directory, newdirectory):
             with zipfile.ZipFile(f"{newdirectory}\\"+"backup"+str(data_atual)+".zip", "w") as arq_compactado:
                 for nome in arq_nomes:
                     arq_compactado.write(nome)
-            print(f"Todos os arquivos dentro do diretório {directory} foram compactados.")
+            print(f"Todos os arquivos dentro do diretório {directory} foram compactados para o diretório {newdirectory}")
+        else:
+            print(f"O diretório {directory} está vazio.")
+    elif(os.path.exists(directory) and (newdirectory == "")):
+        data_atual = date.today()
+        arq_nomes = os.listdir(directory)
+        os.chdir(directory)
+        if(arq_nomes != []):
+            with zipfile.ZipFile("backup"+str(data_atual)+".zip", "w") as arq_compactado:
+                for nome in arq_nomes:
+                    arq_compactado.write(nome)
+            print(f"Todos os arquivos dentro do diretório {directory} foram compactados para o mesmo diretório.")
         else:
             print(f"O diretório {directory} está vazio.")
     else:
