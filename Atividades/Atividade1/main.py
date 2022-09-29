@@ -9,7 +9,7 @@ def imprimir_produto(index):
         return "O produto não está na lista de produtos" 
 
 def remover_produtos(produto_remover):
-    if produto_remover in produtos:
+    if(produto_remover in produtos):
         i = produtos.index(produto_remover)
         produtos.remove(produto_remover)
         valor.pop(i)
@@ -22,14 +22,14 @@ if __name__ == '__main__':
     while True:
         menu = int(input("1 - Impressão de um produto específico através do index.\n2 - Exclusão de um produto específico.\nEscolha uma opção: "))
 
-        if menu == 1:
+        if(menu == 1):
             for produtinhos in produtos:
                 i = produtos.index(produtinhos)
                 print(f"[{i}] - {produtinhos}")
             index = int(input("Digite a posição do produto que você quer imprimir: "))
             print(imprimir_produto(index))
 
-        elif menu == 2:
+        elif(menu == 2):
             produto_remover = input("Digite o produto que você quer remover: ")
             print(remover_produtos(produto_remover))
 
