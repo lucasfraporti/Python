@@ -126,24 +126,24 @@ def this_system_dir():
 
 if __name__ == '__main__':
     while True:
-        user = input("Opção 1: Verificação de diretório de entrada.\nOpção 2: Verificação de diretório de saída.\nOpção 3: Listagem dos arquivos que estão dentro da pasta.\nOpção 4: Compactação da pasta desejada.\nOpção 5: Upload do arquivo compactado para o Google Drive.\nOpção 6: Informar o diretório que este sistema está sendo executado.\nSelecione uma opção: ")
-        if(user == "1" or user == "2"):
+        user = int(input("Opção 1: Verificação de diretório de entrada.\nOpção 2: Verificação de diretório de saída.\nOpção 3: Listagem dos arquivos que estão dentro da pasta.\nOpção 4: Compactação da pasta desejada.\nOpção 5: Upload do arquivo compactado para o Google Drive.\nOpção 6: Informar o diretório que este sistema está sendo executado.\nSelecione uma opção: "))
+        if(user == 1 or user == 2):
             validar_directory()
 
-        elif(user == "3"):
+        elif(user == 3):
             pasta = input("Digite o endereço da pasta que será compactada: ")
             listar_archives(pasta)
 
-        elif(user == "4"):
+        elif(user == 4):
             pasta = input("Digite o endereço de entrada (pasta que será compactada): ")
             newpasta = input("Digite o endereço de saída (diretório para salvar o .zip): ")
             compactar_tudo(pasta, newpasta)
 
-        elif(user == "5"):
+        elif(user == 5):
             pasta = input("Digite o endereço da pasta que possui o .zip: ")
             google_drive_automatization(pasta)
 
-        elif(user == "6"):
+        elif(user == 6):
             this_system_dir()
 
         else:
